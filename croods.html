@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+ <head lang="en">
+   <title> IMDb Redesign App by Roy Soetantio </title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width = device-width, initial-scale=1">
+   <link rel="stylesheet" type="text/css" href="assets/sass/main.css">
+   <link rel="stylesheet" href="assets/sass/font-awesome/css/font-awesome.min.css">
+   <link rel="stylesheet" href="assets/sass/ionicons/css/ionicons.min.css">
+ </head>
+ <body>
+   <header class="header">
+     <div class="header__top">
+       <div class="i-container"><i class="fa fa-bars fa-lg" aria-hidden="true"></i></div>
+       <div class="logo__container">
+         <a href="index.html"><img class="logo__img" src="assets/images/imdb_logo_noborder.png"></a>
+       </div>
+       <div class="search__container">
+         <input class="search__input" type="search" placeholder="Search" autofocus>
+       </div>
+       <div class="i-container"><i class="fa fa-search fa-lg fa-rotate-90" aria-hidden="true"></i></div>
+     </div>
+     <nav class="nav header__nav is-hidden">
+       <ul class="nav__list">
+         <li class="nav__item"><a class="nav__link active" href="movie.html">movies</a></li>
+         <li class="nav__item"><a class="nav__link" href="tv.html">TV</a></li>
+         <li class="nav__item"><a class="nav__link" href="celeb.html">celebs</a></li>
+       </ul>
+     </nav>
+   </header>
+   <section class="hero">
+      <div class="hero__window">
+        <div class="hero__content">
+          <picture>
+            <source media="(min-width: 900px)" srcset="assets/images/croods_large.jpg">
+            <source media="(min-width: 650px)" srcset="assets/images/croods_medium.jpg">
+            <a href="croods.html">
+              <img class="hero__img" src="assets/images/croods_page_main_450.jpg" alt="all the characters of the movie croods in a photo family" sizes="100vw">
+            </a>
+          </picture>
+        </div>
+      </div>
+  </section>
+  <section>
+    <div class="title__overview">
+      <div class="title__top-block">
+        <div class="title__watchlist i-container">
+          <i id="addToWatchlistIcon"class="ion-ios-plus-outline"></i>
+        </div>
+        <div class="title__details">
+          <div class="title__name">
+            <h3> The Croods <span class="title__name_date"> (2013) </span> <span id="addToWatchlist"></span> </h3>
+          </div>
+          <div class="title__infos">
+            <ul class="infos__list">
+              <li class="infos__items">PG</li>
+              <li class="infos__items infos__items_time">96min</li>
+              <li class="infos__items">Adventure</li>
+              <li class="infos__items">Animation</li>
+              <li class="infos__items">Comedy</li>
+            </ul>
+          </div>
+        </div>
+    </div>
+    <div class="title__low-block">
+      <div class="title__synop">
+        After their cave is destroyed, a caveman family must trek through an unfamiliar fantastical world with the help of an inventive boy.
+      </div>
+    </div>
+  </div>
+  </section>
+  <section>
+    <div class="media">
+      <div class="media__trailer">
+        <img src="assets/images/croods_trailer.jpg">
+        <div class="infos__items"> Trailer </div>
+        <a href="http://www.imdb.com/title/tt0481499/videoplayer/vi126265113?ref_=tt_ov_vi" target="_blank">
+          <div class="i-container">
+            <i class="fa fa-play-circle fa-3x" aria-hidden="true"></i>
+          </div>
+          </a>
+      </div>
+      <div class="media__pictures">
+          <img src="assets/images/char_croods_belt.jpg">
+          <div class="infos__items"> Pictures </div>
+          <a href="http://www.imdb.com/title/tt0481499/mediaindex?ref_=tt_pv_mi_sm" target="_blank">
+            <div class="i-container">
+              <i class="fa fa-th fa-2x" aria-hidden="true"></i>
+            </div>
+          </a>
+      </div>
+    </div>
+  </section>
+  <section>
+     <div class="section__title">
+       <h3 class="section__name">Top Billed Cast</h3>
+       <div class="icon__greater ion-chevron-right"></div>
+     </div>
+   </section>
+   <section class="posters__window">
+     <div class="posters__container">
+       <div class="poster">
+         <img class="poster__img"
+         src="assets/images/nicolas_cage.jpg"
+         alt="Nicolas Cage"
+         size= "33vw">
+         <h5 class="poster__name">nicolas cage</h5>
+       </div>
+       <div class="poster">
+         <img class="poster__img"
+         src="assets/images/ryan_reynolds.jpg"
+         alt="Ryan Reynolds"
+         size= "33vw">
+         <h5 class="poster__name">ryan reynolds</h5>
+       </div>
+       <div class="poster">
+         <img class="poster__img"
+         src="assets/images/emma_stone.jpg"
+         alt="Emma Stone"
+         size= "33vw">
+         <h5 class="poster__name">emma stone</h5>
+       </div>
+       <div class="poster">
+         <img class="poster__img"
+         src="assets/images/catherine_keener.jpg"
+         alt="Catherine Keener"
+         size= "33vw">
+         <h5 class="poster__name">catherine keener</h5>
+       </div>
+       <div class="poster">
+         <img class="poster__img"
+         src="assets/images/cloris_leachman.jpg"
+         alt="Cloris Leachman"
+         size= "33vw">
+         <h5 class="poster__name">cloris_leachman</h5>
+       </div>
+       <div class="poster">
+         <img class="poster__img"
+         src="assets/images/clark_duke.jpg"
+         alt="Clark Duke"
+         size= "33vw">
+         <h5 class="poster__name">clark duke</h5>
+       </div>
+       <div class="poster">
+         <img class="poster__img"
+         src="assets/images/chris_sanders.jpg"
+         alt="Chris Sanders"
+         size= "33vw">
+         <h5 class="poster__name">chris sanders</h5>
+       </div>
+     </div>
+   </section>
+
+
+   <script src="assets/scripts/jquery-3.2.1.min.js"></script>
+   <script src="assets/scripts/main.js"></script>
+ </body>
+ </html>

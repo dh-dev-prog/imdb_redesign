@@ -1,0 +1,400 @@
+
+@import "helpers/reset";
+@import "helpers/clearfix";
+
+// ----------------------------------- SASS VAR & MIXINS
+
+// ---------------------------- Colors
+$main-bg: rgba(230,185,30,1);
+$main-bg-3: fade-out($main-bg, .3);
+$main-bg-2: fade-out($main-bg, .2);
+$main-bg-1: fade-out($main-bg, .1);
+$main-text-color: #212121;
+$padding: 15px;
+// --------------------------- Mixins
+
+// --------------------- Placeholders
+
+%thumbsize {
+  min-height: 50px;
+  min-width: 50px;
+  line-height: 50px;
+}
+%headerEl {
+  @extend %thumbsize;
+  color: #fff;
+  text-align: center;
+}
+%ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* ------------------------------------------------ BASE
+*/
+
+body {
+  background-color: #333;
+  color: #fff;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: $main-text-color;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.i-container {
+  @extend %thumbsize;
+  max-height: 50px;
+  max-width: 50px;
+  text-align: center;
+  cursor: pointer;
+}
+
+// ------------------------------------------------
+
+@import "helpers/typo";
+@import "helpers/layout";
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+/* --------------------------------------------- MODULES
+*/
+
+/* ---------------------------------- header-top
+*/
+
+.header {
+  position: fixed;
+  width: 100vw;
+  background-color: $main-bg; /*for browser support if transparent not supported*/
+  background-color: $main-bg-2;
+  z-index: 6;
+}
+.header__top {
+  display: flex;
+}
+.logo__container {
+  @extend %headerEl;
+  display: flex;
+  width: calc(100% - 100px);
+  justify-content: center;
+  align-items: center;
+}
+.logo__img {
+  max-width: 70px;
+  max-height: 70px;
+}
+.search__container {
+  @extend %headerEl;
+  display: none;
+  width: calc(100% - 70px - 50px);
+  padding: 0 10px;
+}
+.search__input {
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  font-size: 1em;
+  text-transform: capitalize;
+}
+.search__input::placeholder {
+  color: #fff;
+}
+
+/* ----------------------------------------- nav
+*/
+.nav__list {
+  display: flex;
+  padding: 5px;
+}
+.nav__item {
+  flex: 1;
+  text-align: center;
+}
+.nav__link {
+  flex: 1;
+  padding: 5px;
+  border-radius: 4px;
+  border-right: 1px solid $main-bg-3;
+  background-color: rgba(0,0,0, .2);
+  color: #fff;
+  text-transform: capitalize;
+  font-family: "Calibri", sans-serif;
+  font-size: 0.9em;
+}
+.nav__link.active, .nav__link:hover {
+  background-color: #fff;
+  opacity: .9;
+  color: #000;
+}
+
+/* ---------------------------------------- hero
+*/
+
+.slide-viewer,
+.hero__window {
+  position: relative;
+  overflow: hidden;
+}
+.slide-group {
+  width: 300%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.hero__slide {
+  display: none;
+  width: calc(100%/3);
+  &:first-child{
+    display: block;
+  }
+}
+.hero__content {
+  width: 100vw;
+  border-bottom: 2px solid $main-bg;
+}
+.hero__img {
+  width: 100vw;
+}
+.hero__title {
+  position: absolute;
+  bottom: 0;
+  width: 100%; /* for the hero__title ellipsis to work */
+  padding: 20px 20px 30px;
+  background-color: #212121;
+  opacity: 0.8;
+  color: #fff;
+  @extend %ellipsis;
+  text-transform: capitalize;
+  font-family: "Lucida Grande", sans-serif;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1;
+  z-index: 1;
+}
+.hero__sub {
+  display: inline-block; /* for the hero__title ellipsis to work */
+  width: 100%; /* for the hero__title ellipsis to work */
+  margin-top: 9px;
+  font-size: .6em;
+  line-height: 1;
+  @extend %ellipsis;
+}
+.slide-buttons {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  text-align: center;
+  z-index: 2;
+}
+.slide_btn {
+  border: none;
+  outline: 0;
+  background: none;
+  color: silver;
+  font-size: 150%;
+  line-height: 0.5em;
+  opacity: 0.8;
+}
+.slide_btn.active, .slide_btn:hover {
+  border: none;
+  color: $main-bg;
+  cursor: pointer;
+}
+
+/* ------------------------------------- section
+*/
+
+.section__title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 20px;
+}
+.section__name {
+  @extend %ellipsis;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-size: 1.1em;
+  opacity: 0.7;
+  text-transform: capitalize;
+}
+.section__title i:only-of-type {
+  color: #346CCB;
+  /*color: $main-bg;*/
+  min-width: 50px;
+  text-align: center;
+}
+.icon__greater {
+  color: $main-bg;
+  margin-left: auto;
+}
+
+/* ------------------------------------- posters
+*/
+
+.posters__window {
+  width: 100%;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+.posters__container {
+  width: 200%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.poster {
+  display: inline-block;
+  width: calc((100% - 3%)/7);
+  max-width: 214px;
+  margin-right: .5%;
+  border-top: 3px solid transparent;
+  &:last-child {
+    margin-right: 0;
+  }
+  &:hover {
+    background-color: #212121;
+    opacity: 0.8;
+    border-radius: 0 0 5px 5px;
+    border-top: 3px solid $main-bg;
+  }
+}
+.poster__name {
+  padding: 5px;
+  @extend .section__name;
+  font-size: .7em;
+  font-weight: 400;
+  letter-spacing: normal;
+  @extend %ellipsis;
+}
+
+/* --------------------------------------- title
+*/
+.title__overview {
+  margin-top: 10px;
+}
+.title__watchlist > i {
+  height: 50px;
+  line-height: 50px;
+  font-size: 50px;
+  color: $main-bg;
+}
+.title__watchlist {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: calc(20px - (50px - 32.5px)/2); /* 20px margin without the space on the left of the icon (50px of container - 32.5 of icon and /2 to get one side)*/
+}
+#addToWatchlist {
+  background-color: $main-bg;
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9em;
+}
+#addToWatchlist i {
+  color: green;
+}
+.title__details {
+  display: inline-block;
+  vertical-align: top;
+  height: 50px;
+  letter-spacing: 0.08em;
+}
+.title__name {
+  text-transform: capitalize;
+}
+.title__name_date {
+  @extend .section__name;
+  font-size: 1em;
+}
+.infos__list {
+  display: flex;
+  align-items: center;
+}
+.infos__items {
+  @extend .section__name;
+  padding: 0 5px;
+  margin-right: 4px;
+  font-size: 0.6em;
+  border: 1px solid rgba(260,260,260,0.7);
+  border-radius: 8px;
+}
+.infos__items_time {
+  border: inherit;
+}
+.title__synop {
+  padding: 15px 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-size: 0.9em;
+  text-align: justify;
+  opacity: 0.8;
+}
+.media {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+.media__trailer {
+  position: relative;
+  width: 50%;
+  margin-right: 1%;
+  a {
+    color: #fff;
+  }
+  .i-container {
+    position: absolute;
+    top: calc(50% - (50px/2));
+    left: calc(50% - (50px/2));
+    opacity: 0.5;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  .infos__items {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    color: #fff;
+    opacity: 1;
+  }
+}
+.media__pictures {
+  position: relative;
+  width: 50%;
+  a {
+    color: #fff;
+  }
+  .i-container {
+    position: absolute;
+    top: calc(50% - (50px/2));
+    left: calc(50% - (50px/2));
+    opacity: 0.3;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+  .infos__items {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    color: #fff;
+    opacity: 1;
+  }
+}
+
+/* --------------------------------------------- STATES
+*/
+
+.is-hidden {
+  display: none;
+}
+.is-active {
+  display: block;
+}
