@@ -94,6 +94,7 @@ img {
   @extend %headerEl;
   display: flex;
   width: calc(100% - 100px);
+  padding-left: 10px;
   justify-content: center;
   align-items: center;
 }
