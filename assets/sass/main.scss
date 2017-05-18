@@ -75,7 +75,7 @@ img {
   background-color: #333;
 }
 .header {
-  position: fixed;
+  position: absolute;
   width: 768px; /*over 768px use fixed width so it adapts to */
   background-color: $main-bg; /*for browser support if transparent not supported*/
   background-color: $main-bg-2;
@@ -95,6 +95,7 @@ img {
   width: calc(100% - 100px);
   justify-content: center;
   align-items: center;
+  padding-left: 10px;
 }
 .logo__img {
   max-width: 70px;

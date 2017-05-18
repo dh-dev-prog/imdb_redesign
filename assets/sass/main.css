@@ -154,7 +154,7 @@ cite, em {
   background-color: #333; }
 
 .header {
-  position: fixed;
+  position: absolute;
   width: 768px;
   /*over 768px use fixed width so it adapts to */
   background-color: #e6b91e;
@@ -173,7 +173,8 @@ cite, em {
   display: flex;
   width: calc(100% - 100px);
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  padding-left: 10px; }
 
 .logo__img {
   max-width: 70px;
