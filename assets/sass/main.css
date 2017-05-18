@@ -79,7 +79,7 @@ table {
 /* ------------------------------------------------ BASE
 */
 body {
-  background-color: #333;
+  background-color: rgba(51, 51, 51, 0.9);
   color: #fff; }
 
 a {
@@ -144,14 +144,28 @@ cite, em {
 */
 /* ---------------------------------- header-top
 */
+.page {
+  position: relative;
+  /*for the header to adjust with fixed position*/
+  margin: 0 auto;
+  max-width: 768px;
+  /* no width. if page not 100%, nothing is responsive*/
+  min-width: 300px;
+  background-color: #333; }
+
 .header {
   position: fixed;
-  width: 100vw;
+  width: 768px;
+  /*over 768px use fixed width so it adapts to */
   background-color: #e6b91e;
   /*for browser support if transparent not supported*/
   background-color: rgba(230, 185, 30, 0.8);
   z-index: 6; }
 
+@media (max-width: 768px) {
+  /* only to make the header responsive under 768px. the page merge with viewport under 768px so 100% is ok. 100vw too*/
+  .header {
+    width: 100%; } }
 .header__top {
   display: flex; }
 
@@ -232,7 +246,8 @@ cite, em {
   border-bottom: 2px solid #e6b91e; }
 
 .hero__img {
-  width: 100vw; }
+  width: 100vw;
+  min-width: 300px; }
 
 .hero__title {
   position: absolute;
@@ -262,7 +277,7 @@ cite, em {
 .slide-buttons {
   position: absolute;
   bottom: 0;
-  width: 100vw;
+  width: 100%;
   text-align: center;
   z-index: 2; }
 
@@ -318,7 +333,6 @@ cite, em {
   flex-wrap: nowrap; }
 
 .poster {
-  display: inline-block;
   width: calc((100% - 3%)/7);
   max-width: 214px;
   margin-right: .5%;
