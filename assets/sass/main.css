@@ -235,7 +235,8 @@ cite, em {
 .slide-viewer,
 .hero__window {
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  max-height: 500px; }
 
 .slide-group {
   width: 300%;
