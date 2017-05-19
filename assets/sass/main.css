@@ -79,7 +79,13 @@ table {
 /* ------------------------------------------------ BASE
 */
 body {
-  background-color: #474747; }
+  background-color: #474747;
+  /* disable selected element avoiding turning blue on multiple clicks.*/
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none; }
 
 a {
   display: block;

@@ -36,6 +36,12 @@ $padding: 15px;
 
 body {
   background-color: #474747;
+  /* disable selected element avoiding turning blue on multiple clicks.*/
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 a {
   display: block;
@@ -303,15 +309,6 @@ img {
   display: inline-block;
   vertical-align: top;
   margin-left: calc(20px - (50px - 32.5px)/2); /* 20px margin without the space on the left of the icon (50px of container - 32.5 of icon and /2 to get one side)*/
-}
-#addToWatchlist {
-  background-color: $main-bg;
-  border-radius: 10px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 0.9em;
-}
-#addToWatchlist i {
-  color: green;
 }
 .title__details {
   display: inline-block;
