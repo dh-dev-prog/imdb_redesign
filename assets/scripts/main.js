@@ -100,14 +100,3 @@ $('.slider').each(function() {              // For every slider
     }
   });
 }())
-
-
-$('#addToWatchlistIcon').on('click', function(){
-  $.ajax ({
-    type: "GET",
-    url: 'assets/data/watchlist.html',
-    success: function(data){
-      $('#addToWatchlist').html(data);
-    }
-  });
-});
