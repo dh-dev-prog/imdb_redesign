@@ -176,11 +176,14 @@ img {
 }
 .hero__content {
   width: 100vw;
+  max-height: 500px;
+  overflow: auto;
   border-bottom: 2px solid $main-bg;
 }
 .hero__img {
-  width: 100vw;
+  width: 100%;
   min-width: 300px;
+  max-width: 768px;
 }
 .hero__title {
   position: absolute;
@@ -308,15 +311,6 @@ img {
   display: inline-block;
   vertical-align: top;
   margin-left: calc(20px - (50px - 32.5px)/2); /* 20px margin without the space on the left of the icon (50px of container - 32.5 of icon and /2 to get one side)*/
-}
-#addToWatchlist {
-  background-color: $main-bg;
-  border-radius: 10px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 0.9em;
-}
-#addToWatchlist i {
-  color: green;
 }
 .title__details {
   display: inline-block;

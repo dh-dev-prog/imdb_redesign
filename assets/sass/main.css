@@ -81,16 +81,12 @@ table {
 body {
   background-color: rgba(51, 51, 51, 0.9);
   color: #fff;
+  /* prevent elements to be selected in blue after multiple clicks.*/
   -webkit-user-select: none;
-  /* Chrome/Safari */
   -moz-user-select: none;
-  /* Firefox */
   -ms-user-select: none;
-  /* IE10+ */
-  /* Rules below not implemented in browsers yet */
   -o-user-select: none;
-  user-select: none;
-  /* To target IE9 downwards and Opera the html attribute unselectable must be used instead: <div unselectable="on">Test Text</div> */ }
+  user-select: none; }
 
 a {
   display: block;
@@ -254,11 +250,14 @@ cite, em {
 
 .hero__content {
   width: 100vw;
+  max-height: 500px;
+  overflow: auto;
   border-bottom: 2px solid #e6b91e; }
 
 .hero__img {
-  width: 100vw;
-  min-width: 300px; }
+  width: 100%;
+  min-width: 300px;
+  max-width: 768px; }
 
 .hero__title {
   position: absolute;
@@ -378,15 +377,6 @@ cite, em {
   vertical-align: top;
   margin-left: calc(20px - (50px - 32.5px)/2);
   /* 20px margin without the space on the left of the icon (50px of container - 32.5 of icon and /2 to get one side)*/ }
-
-#addToWatchlist {
-  background-color: #e6b91e;
-  border-radius: 10px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 0.9em; }
-
-#addToWatchlist i {
-  color: green; }
 
 .title__details {
   display: inline-block;
